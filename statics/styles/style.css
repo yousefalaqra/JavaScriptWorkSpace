@@ -1,11 +1,11 @@
-.container-1, .container-2, .container-3{
+.container-1, .container-2, .container-3, .container-4{
     border: 1px black solid;
     margin: 0 auto;
     width: 75%;
     text-align: center;
 }
 
-.flex-container-1, .flex-container-2, .flex-container-3{
+.flex-container-1, .flex-container-2, .flex-container-3, .flex-container-4{
     border: 1px black solid;
     display: flex;
     flex-wrap: wrap;
