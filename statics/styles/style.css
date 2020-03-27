@@ -1,11 +1,12 @@
-.container-1, .container-2, .container-3, .container-4{
+.container-1, .container-2, .container-3, .container-4, .container-5{
     border: 1px black solid;
     margin: 0 auto;
     width: 75%;
     text-align: center;
 }
 
-.flex-container-1, .flex-container-2, .flex-container-3, .flex-container-4{
+.flex-container-1, .flex-container-2, .flex-container-3, .flex-container-4, .flex-container-5-blackjack-1,
+ .flex-container-5-blackjack-2, .flex-container-5-blackjack-3{
     border: 1px black solid;
     display: flex;
     flex-wrap: wrap;
@@ -25,4 +26,29 @@
 
 .flex-container-3 img:hover{
     box-shadow: 0px 10px 55px blue ;
+}
+
+.flex-container-5-blackjack-1{
+    height: 360px;
+    background: url(../images/table.jpg) no-repeat center;
+    background-size: 100% 100%; 
+}
+
+
+.flex-container-5-blackjack-1 div{
+    flex: 1;
+    border: 1px solid black;
+    color: blanchedalmond;
+    text-align: center;
+}
+
+.flex-container-5-blackjack-2{
+    background: url(../images/table.jpg) no-repeat center;
+    background-size: 100% 100%; 
+}
+
+table, th, tr{
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
 }
