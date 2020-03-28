@@ -73,18 +73,24 @@
             <h3><span id="game-status">Let's Play!</span></h3>
 
             <div class="flex-container-5-blackjack-1">
-                <div class="player-area">
-                    <h3>You:<span id="player-score">0</span></h3>
+                <div id="player-area">
+                    <h3><span id="player-score-text">You:</span><span id="player-score">0</span></h3>
+                    <div id="player-cards-area" class="felx-box-player-area">
+
+                    </div>
                 </div>
-                <div class="dealer-area">
-                    <h3>Delaer:<span id="dealer-score">0</span></h3>
+                <div id="dealer-area">
+                    <h3><span id="dealer-score-text">Delaer:</span><span id="dealer-score">0</span></h3>
+                    <div id="dealer-cards-area" class="felx-box-dealer-area">
+
+                    </div>
                 </div>
             </div>
 
             <div class="flex-container-5-blackjack-2">
-                <button class="btn btn-primary btn-lg mr-2">Hit</button>
-                <button class="btn btn-warning btn-lg mr-2">Stand</button>
-                <button class="btn btn-danger btn-lg">Deal</button>
+                <button class="btn btn-primary btn-lg mr-2" id="hit">Hit</button>
+                <button class="btn btn-warning btn-lg mr-2" id="stand">Stand</button>
+                <button class="btn btn-danger btn-lg" id="deal">Deal</button>
             </div>
 
             <div class="flex-container-5-blackjack-3">

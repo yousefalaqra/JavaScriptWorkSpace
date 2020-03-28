@@ -6,7 +6,7 @@
 }
 
 .flex-container-1, .flex-container-2, .flex-container-3, .flex-container-4, .flex-container-5-blackjack-1,
- .flex-container-5-blackjack-2, .flex-container-5-blackjack-3{
+ .flex-container-5-blackjack-2, .flex-container-5-blackjack-3, .felx-box-player-area, .felx-box-dealer-area{
     border: 1px black solid;
     display: flex;
     flex-wrap: wrap;
