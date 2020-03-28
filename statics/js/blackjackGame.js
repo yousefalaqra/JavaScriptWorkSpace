@@ -52,13 +52,13 @@ function onHitClicked(){
 }
 
 // onStandClicked(): handle the cases when the player clicks Stand button 
-function onStandClicked(){
+async function onStandClicked(){
     debugger;
     if(dealerTurn){  
         // case 1 invert the value of playerTurn to be false, so the player won't be able to click on Hit again 
         playerTurn = false;
         // case 2: when the player clicks stand that means he finished his turn, next will be the dealr turn..
-        launchDealer();
+        await launchDealer();
     
         // case 3: when the dealer finished his turn, a winner must be choosen.. you or the dealr?!
         decideWinner();
@@ -73,14 +73,16 @@ function onStandClicked(){
 
 // onDealClicked(): handle the cases when the player clicks Deal
 function onDealClicked(){
-    // case 1: when the player clicks deal, the scores of each competitors have to be reseted to 0
-    resetCompetitorsScores();
+    if(!dealerTurn && !playerTurn){
+        // case 1: when the player clicks deal, the scores of each competitors have to be reseted to 0
+        resetCompetitorsScores();
+        
+        // case 2: also, the game status baord has to be rested to 'Let's play!'
+        resetGameStatus();
     
-    // case 2: also, the game status baord has to be rested to 'Let's play!'
-    resetGameStatus();
-
-    // case 3: finaly, remove all the playing cards from the dom
-    removePlayingCards();
+        // case 3: finaly, remove all the playing cards from the dom
+        removePlayingCards();
+    }
 }
 
 // resetCompetitorsScores(): rest the socre result elemnts  in the competitors areas to be 0 again. 
@@ -135,12 +137,19 @@ function displayAccumulatedPlayerGameResults(){
 }
 
 // launchDealer(): handle the dealr turn by thrown cards autmaticly.
-function launchDealer(){
-    while(dealer['score'] <= 15){
+async function launchDealer(){
+    while(dealer['score'] <= 16){
         card = throwCard(dealer);
         incrementCardValue(card, dealer);
         updateScore(dealer);
+        await sleep(1000);
     }
+}
+
+// sleep(ms): function that will make a delay, will be used to make a certin delay while the dealr is playing,
+// so the cards won't show instantly.
+function sleep(ms){
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 // decideWinner(): detrmine the winner based on the socres of each competitor
